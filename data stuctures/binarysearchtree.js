@@ -62,26 +62,29 @@ BST.prototype.getMaxVal = function() {
   else return this.value;
 };
 
-var bst = new BST(50);
+// var bst = new BST(50);
 
-bst.insert(30);
-bst.insert(70);
-bst.insert(100);
-bst.insert(60);
-bst.insert(59);
-bst.insert(20);
-bst.insert(45);
-bst.insert(35);
-bst.insert(85);
-bst.insert(105);
-bst.insert(10);
+// bst.insert(30);
+// bst.insert(70);
+// bst.insert(100);
+// bst.insert(60);
+// bst.insert(59);
+// bst.insert(20);
+// bst.insert(45);
+// bst.insert(35);
+// bst.insert(85);
+// bst.insert(105);
+// bst.insert(10);
 
-console.log(bst);
-bst.depthFirstTraversal(log, 'in-order');
-bst.breadthFirstTraversal(log);
-console.log(`MIN: ${bst.getMinVal()}`);
-console.log(`MAX: ${bst.getMaxVal()}`);
+// console.log(bst);
+// bst.depthFirstTraversal(log, 'in-order');
+// bst.breadthFirstTraversal(log);
+// console.log(`MIN: ${bst.getMinVal()}`);
+// console.log(`MAX: ${bst.getMaxVal()}`);
 
-function log(value) {
-  console.log(value);
-}
+// function log(value) {
+//   console.log(value);
+// }
+
+
+module.exports = BST;
