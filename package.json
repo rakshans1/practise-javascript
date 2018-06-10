@@ -1,0 +1,42 @@
+{
+  "name": "practise-javascript",
+  "version": "0.0.1",
+  "description": "Basic, algorithms and data-structures implemented on JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src/*",
+    "test": "jest",
+    "ci": "npm run lint && npm run test -- --coverage",
+    "codecov": "codecov"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rakshans1/practice-javascript.git"
+  },
+  "keywords": [
+    "algorithm",
+    "javascript",
+    "data-structure"
+  ],
+  "author": "Rakshan Shetty <shetty.raxx555@gmail.com> (http://rakshanshetty.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rakshans1/practice-javascript/issues"
+  },
+  "homepage": "https://github.com/rakshans1/practice-javascript#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "codecov": "^3.0.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.17.0",
+    "jest": "^23.0.1",
+    "pre-commit": "^1.2.2"
+  }
+}
