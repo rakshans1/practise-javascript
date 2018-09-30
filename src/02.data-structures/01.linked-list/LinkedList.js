@@ -1,4 +1,4 @@
-/*******************
+/** *****************
 _        _           _                 _     _        _         _
 | |      (_)         | |               | |   | |      (_)       | |
 | |       _   _ __   | | __   ___    __| |   | |       _   ___  | |_
@@ -8,7 +8,7 @@ _        _           _                 _     _        _         _
 
 Big O Notation = O (n)
 
-*********************/
+******************** */
 
 import LinkedListNode from './LinkedListNode';
 
@@ -58,6 +58,7 @@ export default class LinkedList {
 
     return this;
   }
+
   /**
    * @param {any} value
    * @returns {LinkedListNode}
@@ -81,7 +82,7 @@ export default class LinkedList {
 
     if (currentNode !== null) {
       // If next node must be deleted then make next node to be a next next one.
-      while(currentNode.next) {
+      while (currentNode.next) {
         if (currentNode.next.value === value) {
           deletedNode = currentNode.next;
           currentNode.next = currentNode.next.next;
@@ -99,20 +100,21 @@ export default class LinkedList {
 
     return deletedNode;
   }
+
   /**
    * @param {any} value
    * @param {function} callback
    * @returns {LinkedListNode}
    * @memberof LinkedList
    */
-  find({value = undefined, callback = undefined}) {
+  find({ value = undefined, callback = undefined }) {
     if (!this.head) {
       return null;
     }
 
     let currentNode = this.head;
 
-    while(currentNode.next) {
+    while (currentNode.next) {
       // If callback is specified then try to find node by callback.
       if (callback && callback(currentNode.value)) {
         return currentNode;
@@ -128,6 +130,7 @@ export default class LinkedList {
 
     return null;
   }
+
   /**
    * @returns {LinkedListNode}
    * @memberof LinkedList
@@ -141,12 +144,12 @@ export default class LinkedList {
       return deletedTail;
     }
 
-    const deletedTail  = this.tail;
+    const deletedTail = this.tail;
 
     // Rewind to the last node and delete "next" link for the node before the last one.
     let currentNode = this.head;
-    while(currentNode.next) {
-      if(!currentNode.next.next) {
+    while (currentNode.next) {
+      if (!currentNode.next.next) {
         currentNode.next = null;
       } else {
         currentNode = currentNode.next;
@@ -201,4 +204,3 @@ export default class LinkedList {
     return this.toArray().map(node => node.toString(callback)).toString();
   }
 }
-

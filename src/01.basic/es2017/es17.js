@@ -10,9 +10,7 @@ console.log(values); // [3,2,1]
 const entries = Object.entries(cars);
 
 for (const [key, value] of entries) {
-
   console.log(key, value); // Bmw 3, Tesla 2, Toyota 1
-
 }
 
 // 3. String padding
@@ -26,19 +24,15 @@ for (const [key, value] of entries) {
 
 // 4. Object.getOwnPropertyDescriptors
 
-var Car = {
+const Car = {
   name: 'BMW',
   price: 1000000,
   set discount(x) {
-
     this.d = x;
-
   },
   get discount() {
-
     return this.d;
-
-  }
+  },
 };
 // Print details of Car object's 'discount' property
 
@@ -70,10 +64,10 @@ const ElectricCar2 = Object.defineProperties({}, Object.getOwnPropertyDescriptor
 // Print details of ElectricCar2 object's 'discount' property
 
 console.log(Object.getOwnPropertyDescriptor(ElectricCar2, 'discount'));
- // Prints..
- // { get: [Function: get],  👈🏼👈🏼👈🏼
- //   Set: [Function: set],  👈🏼👈🏼👈🏼
- //   Enumerable: true,
- //   Configurable: true
- // }
- // Notice that getters and setters are present in the ElectricCar2 object for 'discount' property!
+// Prints..
+// { get: [Function: get],  👈🏼👈🏼👈🏼
+//   Set: [Function: set],  👈🏼👈🏼👈🏼
+//   Enumerable: true,
+//   Configurable: true
+// }
+// Notice that getters and setters are present in the ElectricCar2 object for 'discount' property!

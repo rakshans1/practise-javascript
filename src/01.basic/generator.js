@@ -1,14 +1,12 @@
 function* idMaker() {
-  var index = 0;
-  while (true)
-    yield index++;
+  let index = 0;
+  while (true) yield index++;
 }
 
-var gen = idMaker();
+const gen = idMaker();
 
 console.log(gen.next());
 console.log(gen.next());
-
 
 
 function* foo() {
@@ -33,8 +31,8 @@ function* fibonacci(n) {
   }
 }
 
-var it = fibonacci(10);
+const it = fibonacci(10);
 
-for (var v of it) {
+for (const v of it) {
   console.log(v);
 }

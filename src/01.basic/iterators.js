@@ -12,13 +12,12 @@ for (const a of array) {
 }
 
 
-
 const customIterableObject = {
-  '0': 'zero',
-  '1': 'one',
-  '2': 'two',
-  '3': 'three',
-  '4': 'four',
+  0: 'zero',
+  1: 'one',
+  2: 'two',
+  3: 'three',
+  4: 'four',
   [Symbol.iterator]() {
     let index = 0;
     return {
@@ -27,33 +26,34 @@ const customIterableObject = {
           index++;
           return { value: this[index - 1], done: false };
         }
-        return { value: undefined, done: true }
-      }
-    }
-  }
-}
+        return { value: undefined, done: true };
+      },
+    };
+  },
+};
 
 
-for (let a of customIterableObject) {
+for (const a of customIterableObject) {
   console.log(a);
 }
 
 console.log(...customIterableObject);
 
-var Fib = {
+const Fib = {
   [Symbol.iterator]() {
-    var n1 = 1, n2 = 1;
+    let n1 = 1,
+      n2 = 1;
     return {
       next() {
-        var current = n2;
+        const current = n2;
         n2 = n1;
-        n1 = n1 + current;
+        n1 += current;
         return { value: current, done: false };
-      }
+      },
     };
-  }
+  },
 };
-for (var v of Fib) {
+for (const v of Fib) {
   console.log(v);
   if (v > 50) break;
 }
