@@ -19,6 +19,12 @@ Simple representation of a stack runtime with push and pop operations.
 
 ![Stack](https://upload.wikimedia.org/wikipedia/commons/b/b4/Lifo_stack.png)
 
+### Operation Complexity
+
+| Access    | Search    | Insertion | Deletion  | 
+| :-------: | :-------: | :-------: | :-------: | 
+| n         | n         | 1         | 1         |
+
 ## References
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Stack_(abstract_data_type))

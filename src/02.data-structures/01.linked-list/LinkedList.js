@@ -1,43 +1,49 @@
-/** *****************
-_        _           _                 _     _        _         _
-| |      (_)         | |               | |   | |      (_)       | |
-| |       _   _ __   | | __   ___    __| |   | |       _   ___  | |_
-| |      | | | '_ \  | |/ /  / _ \  / _` |   | |      | | / __| | __|
-| |____  | | | | | | |   <  |  __/ | (_| |   | |____  | | \__ \ | |_
-|______| |_| |_| |_| |_|\_\  \___|  \__,_|   |______| |_| |___/  \__|
+/* *******************
+_      _       _            _   _      _     _
+| |    (_)     | |          | | | |    (_)   | |
+| |     _ _ __ | | _____  __| | | |     _ ___| |_
+| |    | | '_ \| |/ / _ \/ _` | | |    | / __| __|
+| |____| | | | |   <  __/ (_| | | |____| \__ \ |_
+|______|_|_| |_|_|\_\___|\__,_| |______|_|___/\__|
 
 Big O Notation = O (n)
 
-******************** */
+********************* */
 
 import LinkedListNode from './LinkedListNode';
 
-/**
+/*
  * @export
  * @class LinkedList
  */
 export default class LinkedList {
   constructor() {
-    /** @var LinkedListNode */
+    /* @var LinkedListNode */
     this.head = null;
 
-    /** @var LinkedListNode */
+    /* @var LinkedListNode */
     this.tail = null;
   }
 
-  /**
+  /*
    * @param {any} value
    * @return {LinkedList}
    * @memberof LinkedList
    */
   prepend(value) {
     // Make new node to be a head.
-    this.head = new LinkedListNode(value, this.head);
+    const newNode = new LinkedListNode(value, this.head);
+    this.head = newNode;
+
+    // If there is no tail yet let's make new node a tail.
+    if (!this.tail) {
+      this.tail = newNode;
+    }
 
     return this;
   }
 
-  /**
+  /*
    * @param {any} value
    * @return {LinkedList}
    * @memberof LinkedList
@@ -59,7 +65,7 @@ export default class LinkedList {
     return this;
   }
 
-  /**
+  /*
    * @param {any} value
    * @returns {LinkedListNode}
    * @memberof LinkedList
@@ -101,7 +107,7 @@ export default class LinkedList {
     return deletedNode;
   }
 
-  /**
+  /*
    * @param {any} value
    * @param {function} callback
    * @returns {LinkedListNode}
@@ -131,7 +137,7 @@ export default class LinkedList {
     return null;
   }
 
-  /**
+  /*
    * @returns {LinkedListNode}
    * @memberof LinkedList
    */
@@ -160,7 +166,7 @@ export default class LinkedList {
     return deletedTail;
   }
 
-  /**
+  /*
    * @returns {LinkedListNode}
    * @memberof LinkedList
    */
@@ -181,7 +187,17 @@ export default class LinkedList {
     return deletedHead;
   }
 
-  /**
+  /*
+   * @param {*[]} values - Array of values that need to be converted to linked list.
+   * @return {LinkedList}
+   */
+  fromArray(values) {
+    values.forEach(value => this.append(value));
+
+    return this;
+  }
+
+  /*
    * @return {LinkedListNode[]}
    */
   toArray() {
@@ -196,11 +212,39 @@ export default class LinkedList {
     return nodes;
   }
 
-  /**
+  /*
    * @return {string}
    * @memberof LinkedList
    */
   toString(callback) {
     return this.toArray().map(node => node.toString(callback)).toString();
+  }
+
+  /*
+   * Reverse a linked list.
+   * @returns {LinkedList}
+   */
+  reverse() {
+    let currNode = this.head;
+    let prevNode = null;
+    let nextNode = null;
+
+    while (currNode) {
+      // Store next node.
+      nextNode = currNode.next;
+
+      // Change next node of the current node so it would link to previous node.
+      currNode.next = prevNode;
+
+      // Move prevNode and currNode nodes one step forward.
+      prevNode = currNode;
+      currNode = nextNode;
+    }
+
+    // Reset head and tail.
+    this.tail = this.head;
+    this.head = prevNode;
+
+    return this;
   }
 }

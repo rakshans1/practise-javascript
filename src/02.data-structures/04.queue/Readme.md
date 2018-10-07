@@ -20,6 +20,12 @@ Representation of a FIFO (first in, first out) queue
 
 ![Queue](https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg)
 
+### Operation Complexity
+
+|                         | Access    | Search    | Insertion | Deletion  | 
+| ----------------------- | :-------: | :-------: | :-------: | :-------: | 
+| **Queue**               | n         | n         | 1         | 1         |
+
 ## References
 
 - [Wikipedia](https://en.wikipedia.org/wiki/Queue_(abstract_data_type))
