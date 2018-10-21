@@ -80,3 +80,4 @@ Data structure is a particular way of organizing and storing data in a computer 
 * `B` [Doubly Linked List](./src/02.data-structures/02.doubly-linked-list)
 * `B` [Stack](src/02.data-structures/03.stack)
 * `B` [Queue](src/02.data-structures/04.queue)
+* `B` [Hash Table](src/02.data-structures/05.hash-table)

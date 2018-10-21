@@ -120,7 +120,7 @@ export default class LinkedList {
 
     let currentNode = this.head;
 
-    while (currentNode.next) {
+    while (currentNode) {
       // If callback is specified then try to find node by callback.
       if (callback && callback(currentNode.value)) {
         return currentNode;

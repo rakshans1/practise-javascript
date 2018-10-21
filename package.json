@@ -7,7 +7,9 @@
     "lint": "eslint ./src/*",
     "test": "jest",
     "ci": "npm run lint && npm run test -- --coverage",
-    "codecov": "codecov"
+    "codecov": "codecov",
+    "start": "nodemon --exec 'babel-node'",
+    "start:incpect": "nodemon --inspect-brk --exec 'babel-node'"
   },
   "pre-commit": [
     "lint",
