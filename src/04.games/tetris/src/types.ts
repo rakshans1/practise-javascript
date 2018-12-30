@@ -1,6 +1,7 @@
 export interface IPlayer {
   pos: IOffset,
-  matrix: number[][]
+  matrix: number[][],
+  score: number
 }
 
 export interface IOffset {
