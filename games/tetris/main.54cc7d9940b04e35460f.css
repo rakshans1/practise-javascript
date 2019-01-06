@@ -1,0 +1,34 @@
+body {
+  background-color: #202028;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 2em;
+  text-align: center;
+}
+
+canvas {
+  border: 0.2em solid #fff;
+  height: 70vh;
+}
+
+.title {
+  line-height: 0;
+}
+
+.info {
+  display: flex;
+  font-size: 0.5em;
+  justify-content: center;
+  align-items: center;
+  color: #030304;
+}
+
+.info span {
+  padding: 5px;
+}
+
+.info img {
+  width: 50px;
+  height: 50px;
+}
+
