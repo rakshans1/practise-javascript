@@ -9,7 +9,7 @@
     "ci": "npm run lint && npm run test -- --coverage",
     "codecov": "codecov",
     "start": "nodemon --exec 'babel-node'",
-    "start:incpect": "nodemon --inspect-brk --exec 'babel-node'"
+    "start:inspect": "nodemon --inspect-brk --exec 'babel-node'"
   },
   "pre-commit": [
     "lint",
