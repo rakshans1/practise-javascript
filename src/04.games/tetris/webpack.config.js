@@ -3,6 +3,7 @@ const merge = require("webpack-merge");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== "production";
 
@@ -35,7 +36,8 @@ const webpack = {
     plugins: [
       new HtmlWebpackPlugin({
         template: "src/index.html"
-      })
+      }),
+      new CopyWebpackPlugin(['public'])
     ]
   },
   development: {
@@ -45,7 +47,6 @@ const webpack = {
       contentBase: "./build"
     },
     plugins: [
-      new CleanWebpackPlugin(["build"]),
       new MiniCssExtractPlugin({
         filename: "[name].css",
         chunkFilename: "[id].css"
@@ -55,6 +56,7 @@ const webpack = {
   production: {
     mode: "production",
     plugins: [
+      new CleanWebpackPlugin(["build"]),
       new MiniCssExtractPlugin({
         filename: "[name].[hash].css",
         chunkFilename: "[id].[hash].css"
