@@ -4,10 +4,9 @@
   "description": "Javascript Tetris Game",
   "main": "index.js",
   "scripts": {
-    "dev": "NODE_ENV=development webpack -w",
-    "build": "NODE_ENV=production webpack -p",
+    "build": "game-scripts build",
     "deploy": "npm run build",
-    "start": "NODE_ENV=development webpack-dev-server --open",
+    "start": "game-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -16,17 +15,6 @@
   "author": "Rakshan Shetty",
   "license": "MIT",
   "devDependencies": {
-    "clean-webpack-plugin": "^1.0.0",
-    "copy-webpack-plugin": "^4.6.0",
-    "css-loader": "^2.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.5.0",
-    "style-loader": "^0.23.1",
-    "ts-loader": "^5.3.2",
-    "typescript": "^3.2.2",
-    "webpack": "^4.28.3",
-    "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14",
-    "webpack-merge": "^4.2.1"
+    "game-scripts": "1.0.0"
   }
 }

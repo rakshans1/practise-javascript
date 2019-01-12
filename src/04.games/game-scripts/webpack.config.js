@@ -6,13 +6,15 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const devMode = process.env.NODE_ENV !== "production";
+const appDirectory = fs.realpathSync(process.cwd());
+const resolveApp = relativePath => path.resolve(appDirectory, relativePath);
 
 const webpack = {
   common: {
-    entry: "./src/index.ts",
+    entry: resolveApp("src/index.ts"),
     output: {
       filename: "main.js",
-      path: path.resolve(__dirname, "build")
+      path: resolveApp("build")
     },
     resolve: {
       extensions: [".tsx", ".ts", ".js"]
@@ -35,7 +37,7 @@ const webpack = {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: "src/index.html"
+        template: resolveApp("src/index.html")
       }),
       new CopyWebpackPlugin(['public'])
     ]
@@ -44,7 +46,7 @@ const webpack = {
     mode: "development",
     devtool: "inline-source-map",
     devServer: {
-      contentBase: "./build"
+      contentBase: resolveApp("build")
     },
     plugins: [
       new MiniCssExtractPlugin({

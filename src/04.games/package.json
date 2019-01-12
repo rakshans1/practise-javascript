@@ -1,0 +1,16 @@
+{
+  "name": "games",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true,
+  "author": "Rakshan Shetty",
+  "workspaces": [
+    "game-scripts",
+    "tetris"
+  ],
+  "license": "MIT"
+}
