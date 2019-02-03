@@ -2,10 +2,9 @@
   "name": "tetris",
   "version": "1.0.0",
   "description": "Javascript Tetris Game",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
     "build": "game-scripts build",
-    "deploy": "npm run build",
     "start": "game-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
