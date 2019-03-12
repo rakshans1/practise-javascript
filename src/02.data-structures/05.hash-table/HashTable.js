@@ -1,8 +1,19 @@
+/** ******************************
+ _    _           _       _______    _     _
+ | |  | |         | |     |__   __|  | |   | |
+ | |__| | __ _ ___| |__      | | __ _| |__ | | ___
+ |  __  |/ _` / __| '_ \     | |/ _` | '_ \| |/ _ \
+ | |  | | (_| \__ \ | | |    | | (_| | |_) | |  __/
+ |_|  |_|\__,_|___/_| |_|    |_|\__,_|_.__/|_|\___|
+
+ Big O Notation = O (1)
+ ******************************* */
+
 import LinkedList from '../01.linked-list/LinkedList';
 
 // hash table size directly affects on the number of collisions.
 // The bigger the hash table size the less collision you'll get.
-// For demonstration purposes hash table size is samall to show how collisions
+// For demonstration purposes hash table size is small to show how collisions
 // are being handled.
 const defaultHashTableSize = 32;
 
@@ -11,7 +22,7 @@ class HashTable {
    * @param { number } HashhTableSize
    */
   constructor(hashTableSize = defaultHashTableSize) {
-    // Create hash table of certain size and filll each bucket with empty linked list.
+    // Create hash table of certain size and fill each bucket with empty linked list.
     this.buckets = Array(hashTableSize).fill(null).map(() => new LinkedList());
 
     // Just to keep tack of all actual keys in a fast way.
