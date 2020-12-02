@@ -83,3 +83,7 @@ Data structure is a particular way of organizing and storing data in a computer 
 - `B` [Queue](src/02.data-structures/04.queue)
 - `B` [Hash Table](src/02.data-structures/05.hash-table)
 - `B` [Heap](src/02.data-structures/06.heap) - max and min heap versions
+- `B` [Tree](src/02.data-structures/06.tree)
+
+### References
+- [Javascript Algorithms](https://github.com/trekhleb/javascript-algorithms)
