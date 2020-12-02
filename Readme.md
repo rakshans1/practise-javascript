@@ -8,7 +8,7 @@
 
 **Install all dependencies**
 ```
-npm zinstall
+npm install
 ```
 
 **Run all tests**
